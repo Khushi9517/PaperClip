@@ -1,0 +1,200 @@
+.tasks-page { max-width: 800px; margin: 0 auto; }
+
+/* Header */
+.tasks-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.tasks-heading {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-size: 1.8rem;
+  color: var(--text-primary);
+}
+
+.tasks-count {
+  font-family: var(--font-typewriter);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* Progress bar */
+.tasks-progress {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.2rem;
+  margin-bottom: 1.2rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.progress-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.progress-label {
+  font-family: var(--font-typewriter);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.progress-percent {
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--accent-primary);
+}
+
+.progress-bar {
+  height: 8px;
+  background: var(--bg-secondary);
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid var(--border-light);
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    var(--accent-primary),
+    var(--accent-soft)
+  );
+  border-radius: 4px;
+  transition: width 0.5s ease;
+}
+
+/* Stats */
+.tasks-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.task-stat-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 0.9rem;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.task-stat-value {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+.task-stat-value.pending { color: var(--accent-primary); }
+.task-stat-value.done    { color: var(--accent-success); }
+.task-stat-value.high    { color: var(--accent-danger); }
+
+.task-stat-label {
+  font-family: var(--font-typewriter);
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* Filters */
+.tasks-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 0.8rem 1.2rem;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.filter-group {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.filter-label {
+  font-family: var(--font-typewriter);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+
+.filter-btn {
+  background: none;
+  border: 1px solid var(--border-light);
+  color: var(--text-secondary);
+  padding: 0.25rem 0.7rem;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-family: var(--font-body);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background: var(--accent-primary);
+  color: var(--text-inverse);
+  border-color: var(--accent-primary);
+}
+
+.priority-filter-high.active   { background: var(--accent-danger); border-color: var(--accent-danger); }
+.priority-filter-medium.active { background: var(--accent-primary); border-color: var(--accent-primary); }
+.priority-filter-low.active    { background: var(--accent-success); border-color: var(--accent-success); }
+
+.filter-select {
+  padding: 0.25rem 0.6rem;
+  font-size: 0.8rem;
+  width: auto;
+}
+
+/* Task list */
+.tasks-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+/* Empty state */
+.tasks-empty {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: var(--text-muted);
+}
+
+.tasks-empty-icon { font-size: 3rem; margin-bottom: 1rem; }
+.tasks-empty h3 {
+  font-family: var(--font-heading);
+  font-style: italic;
+  margin-bottom: 0.5rem;
+  color: var(--text-secondary);
+}
+.tasks-empty p { font-size: 0.9rem; font-style: italic; }
+
+@media (max-width: 600px) {
+  .tasks-stats { grid-template-columns: repeat(2, 1fr); }
+  .tasks-filters { flex-direction: column; align-items: flex-start; }
+}

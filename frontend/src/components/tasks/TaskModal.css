@@ -1,0 +1,27 @@
+/* Reuse modal base styles from NoteModal */
+/* Just add task-specific styles here */
+
+.task-modal-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+/* Style the date input and select to match vintage theme */
+input[type="date"].input,
+select.input {
+  cursor: pointer;
+  font-family: var(--font-body);
+  color: var(--text-primary);
+  background: var(--bg-primary);
+}
+
+input[type="date"].input::-webkit-calendar-picker-indicator {
+  opacity: 0.5;
+  cursor: pointer;
+  filter: invert(0.4);
+}
+
+@media (max-width: 480px) {
+  .task-modal-row { grid-template-columns: 1fr; }
+}

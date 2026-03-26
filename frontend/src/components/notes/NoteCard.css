@@ -1,0 +1,113 @@
+.note-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  transition: var(--transition);
+  position: relative;
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+}
+
+.note-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+}
+
+.note-card.pinned {
+  border-color: var(--accent-soft);
+  background: linear-gradient(
+    135deg,
+    var(--bg-card) 0%,
+    rgba(212, 168, 67, 0.06) 100%
+  );
+}
+
+.pin-badge {
+  font-family: var(--font-typewriter);
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent-primary);
+  margin-bottom: 0.2rem;
+}
+
+.note-card-body { flex: 1; }
+
+.note-card-title {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-style: italic;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.note-card-content {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 0.6rem;
+  font-family: var(--font-typewriter);
+}
+
+.note-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-bottom: 0.5rem;
+}
+
+.note-card-date {
+  font-family: var(--font-typewriter);
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  margin-top: 0.3rem;
+}
+
+/* Action buttons */
+.note-card-actions {
+  display: flex;
+  gap: 0.4rem;
+  justify-content: flex-end;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--border-light);
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.note-card:hover .note-card-actions { opacity: 1; }
+
+.note-action-btn {
+  background: none;
+  border: 1px solid var(--border-light);
+  color: var(--text-muted);
+  padding: 0.35rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  transition: var(--transition);
+}
+
+.note-action-btn:hover {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+.note-action-btn.active {
+  color: var(--accent-primary);
+  border-color: var(--accent-primary);
+  background: rgba(139, 105, 20, 0.08);
+}
+
+.note-action-btn.danger:hover {
+  color: var(--accent-danger);
+  border-color: var(--accent-danger);
+  background: rgba(139, 46, 46, 0.08);
+}
+

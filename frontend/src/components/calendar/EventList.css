@@ -1,0 +1,119 @@
+.event-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.event-list-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  padding: 1rem 1.2rem;
+  border-bottom: 1px solid var(--border-light);
+  border-left: 3px solid var(--accent-primary);
+  transition: var(--transition);
+}
+
+.event-list-item:last-child { border-bottom: none; }
+
+.event-list-item:hover { background: var(--bg-secondary); }
+
+.event-list-item.pinned {
+  background: rgba(212, 168, 67, 0.05);
+}
+
+.event-color-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 0.35rem;
+}
+
+.event-list-content { flex: 1; min-width: 0; }
+
+.event-list-top {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 0.2rem;
+}
+
+.event-list-title {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-style: italic;
+  color: var(--text-primary);
+}
+
+.event-pin-badge { font-size: 0.75rem; }
+
+.event-list-desc {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-style: italic;
+  font-family: var(--font-typewriter);
+  margin-bottom: 0.3rem;
+}
+
+.event-list-tasks {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-family: var(--font-typewriter);
+}
+
+.event-list-actions {
+  display: flex;
+  gap: 0.25rem;
+  opacity: 0;
+  transition: var(--transition);
+  flex-shrink: 0;
+}
+
+.event-list-item:hover .event-list-actions { opacity: 1; }
+
+.event-action-btn {
+  background: none;
+  border: 1px solid var(--border-light);
+  color: var(--text-muted);
+  padding: 0.28rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: var(--transition);
+}
+
+.event-action-btn:hover {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+.event-action-btn.active {
+  color: var(--accent-primary);
+  border-color: var(--accent-primary);
+}
+
+.event-action-btn.danger:hover {
+  color: var(--accent-danger);
+  border-color: var(--accent-danger);
+  background: rgba(139, 46, 46, 0.08);
+}
+
+/* Empty */
+.event-list-empty {
+  padding: 2.5rem 1rem;
+  text-align: center;
+  color: var(--text-muted);
+  font-style: italic;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.event-list-empty p:first-child { font-size: 2rem; }
+.event-list-empty-sub { font-size: 0.78rem; color: var(--text-muted); }
